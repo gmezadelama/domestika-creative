@@ -21,7 +21,10 @@ const sketch = () => {
     let inverted = true;
     const drawSquares = () => {
       context.clearRect(0, 0, width, height);
-      context.fillStyle = '#240c76';
+      let gradient = context.createLinearGradient(0, 0, width, height);
+      gradient.addColorStop(0, '#240c76');
+      gradient.addColorStop(1, '#df2676');
+      context.fillStyle = gradient;
       context.fillRect(0, 0, width, height);
       // synthwave sunset colors, palette taken from https://applecolors.com/palette/53535-synthwave-sunset-color
       const palette = [
